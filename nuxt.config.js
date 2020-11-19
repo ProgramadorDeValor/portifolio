@@ -6,7 +6,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - Portifolio',
+    titleTemplate: '%s - Daniel Silva',
     title: 'Portifolio',
     meta: [
       { charset: 'utf-8' },
@@ -17,9 +17,12 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-
+  server: {
+    port: process.env.APP_PORT
+  },
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    'font-awesome/css/font-awesome.css'
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -33,6 +36,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/dotenv',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify'
   ],
