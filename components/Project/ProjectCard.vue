@@ -52,7 +52,7 @@
                 </v-btn>
                 <v-spacer v-if="enableLinkButton" />
                 <v-avatar v-for="item in techIntoArray" :key="item" size="48" tile class="mr-1 my-2">
-                  <img :src="matchLogoByName(item).src" :alt="matchLogoByName(item).src">
+                  <img :id="`${item}-img`" :src="matchLogoByName(item).src" :alt="matchLogoByName(item).alt">
                 </v-avatar>
               </v-row>
             </v-container>
@@ -141,7 +141,7 @@ export default {
         {
           name: 'nologo',
           src: '',
-          alt: 'NO logo'
+          alt: 'No logo'
         }
       ]
     }
