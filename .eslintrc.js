@@ -22,6 +22,9 @@ module.exports = {
     "indent": ["error", 2],
     "vue/no-unused-vars": "off",
     "no-unused-vars": "warn",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "vue/component-tags-order": ["warn", {
+      "order": ["template", "style", "script"]
+    }]
   }
 }
