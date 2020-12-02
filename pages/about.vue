@@ -63,9 +63,27 @@
                   mdi-laravel
                 </v-icon>
               </v-card-text>
-              <div class="d-flex py-2">
-                <system-knowledge />
-              </div>
+              <v-row class="mx-1 align-start">
+                <v-col
+                  v-for="(system, index) in item.systems"
+                  :key="index"
+                  cols="12"
+                  sm="6"
+                  xl="4"
+                >
+                  <system-knowledge
+                    :title="system.title"
+                    :level="system.level"
+                    :bar-value="system.bar"
+                    :description="system.description"
+                    :avatar-letter="system.avatarLetter"
+                    :avatar-color="system.avatarColor"
+                    :card-color="system.cardColor"
+                    :text-color="system.textColor"
+                    :description-title-color="system.descriptionTitleColor"
+                  />
+                </v-col>
+              </v-row>
             </v-card>
           </v-timeline-item>
         </v-timeline>
@@ -73,12 +91,14 @@
     </v-card>
   </v-row>
 </template>
+<style scoped>
 
+</style>
 <script>
 import { SystemKnowledge } from '../components/SystemKnowledge'
 export default {
   name: 'About',
-  components: ['SystemKnowledge'],
+  components: { SystemKnowledge },
   data () {
     return {
       aboutMe: '"Um desenvolvedor backend que adora discutir e desenvolver ideias e projetos novos. Meus pontos ' +
@@ -89,7 +109,32 @@ export default {
           icon: 'mdi-star',
           color: 'primary',
           description: 'Atuando em um time glogbal de desenvolvimento ' +
-            'Workday - Integrações e Relatórios'
+            'Workday - Integrações e Relatórios',
+          systems: [
+            {
+              title: 'C#',
+              level: 'Intermediário',
+              bar: 66,
+              avatarLetter: 'C'
+            },
+            {
+              title: 'Laravel',
+              avatarColor: 'orange darken-2',
+              level: 'Intermediário',
+              bar: 66,
+              avatarLetter: 'L',
+              cardColor: 'white',
+              textColor: 'black',
+              descriptionTitleColor: 'primary'
+            },
+            {
+              title: 'Workday',
+              level: 'Intermediário',
+              bar: 50,
+              description: 'Desenvolvimento de Relatórios, Integrações e BIRT',
+              avatarLetter: 'W'
+            }
+          ]
         },
         {
           title: 'Analista de Negócios - Bemis/Amcor - 2016 - 2018',
@@ -108,7 +153,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
