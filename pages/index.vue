@@ -1,89 +1,64 @@
 <template>
-  <v-row justify="center" align="center">
-    <v-col cols="12" sm="8" md="6">
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+  <v-row class="justify-sm-center justify-md-start">
+    <v-col
+      v-for="project in projects"
+      :key="project.id"
+      cols="12"
+      sm="8"
+      md="6"
+    >
+      <project-card
+        :title="project.title"
+        :description="project.description"
+        :technologies="project.technologies"
+        :link-button="project.linkButton ? project.linkButton : ''"
+        :img-src="project.imgSrc"
+      />
     </v-col>
   </v-row>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
+import ProjectCard from '@/components/Project/ProjectCard'
 export default {
   components: {
-    Logo,
-    VuetifyLogo
+    ProjectCard
+  },
+  data () {
+    return {
+      projects: [
+        {
+          id: 1,
+          title: 'Tamarindo Soluçôes',
+          description: 'Um sistema para dar maior inteligência e controle à restaurantes de pequeno em médio porte.',
+          technologies: 'vuejs,laravel,mariadb,gitlab',
+          linkButton: 'https://tamarindosolucoes.com.br',
+          imgSrc: 'https://tamarindosolucoes.com.br/img/head/hand-holding-a-smartphone-mock-up_1022-1824.png'
+        },
+        {
+          id: 2,
+          title: 'Yotube Hunter',
+          description: 'Um Pequeno Site de Exercício que Busca Informação de Videos do Youtube',
+          technologies: 'vuejs,github',
+          linkButton: 'https://github.com/ProgramadorDeValor/teste-front-end'
+        },
+        {
+          id: 3,
+          title: 'TrayIcon App',
+          description: 'Um pequeno app em C# usando windows forms que inicializa diretamente como um TrayIcon.',
+          technologies: 'csharp,github',
+          linkButton: 'https://github.com/ProgramadorDeValor/TrayIconExampleCsharp'
+        },
+        {
+          id: 4,
+          title: 'Molezinha',
+          description: 'Um pacote que implementa a Lógica do Porto (Software Architectural Pattern), sem modificar o core' +
+            ' do Laravel, podendo ser usado em concomitante com a estrutura original',
+          technologies: 'laravel,github',
+          linkButton: 'https://github.com/ProgramadorDeValor/molezinha-porto-laravel'
+        }
+      ]
+    }
   }
 }
 </script>

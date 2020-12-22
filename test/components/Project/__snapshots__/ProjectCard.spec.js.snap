@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project Card renders properly 1`] = `
+"<v-card-stub loaderheight=\\"4\\" tag=\\"div\\" outlined=\\"true\\">
+  <v-container-stub tag=\\"div\\" fluid=\\"true\\" class=\\"fill-height\\">
+    <v-row-stub tag=\\"div\\">
+      <v-col-stub cols=\\"12\\" tag=\\"div\\" align=\\"center\\">
+        <h2>Test Title</h2>
+      </v-col-stub>
+    </v-row-stub>
+    <v-row-stub tag=\\"div\\" align=\\"center\\" justify=\\"center\\">
+      <v-col-stub cols=\\"12\\" tag=\\"div\\" align=\\"center\\" justify=\\"center\\">
+        <div class=\\"d-flex align-stretch\\">
+          <v-img-stub height=\\"100%\\" maxheight=\\"150px\\" options=\\"[object Object]\\" position=\\"center center\\" src=\\"https://cdn.vuetifyjs.com/images/cards/server-room.jpg\\" transition=\\"fade-transition\\"></v-img-stub>
+        </div>
+      </v-col-stub>
+      <v-col-stub cols=\\"12\\" tag=\\"div\\" align=\\"center\\">
+        <p class=\\"text-justify\\">
+          Description Test
+        </p>
+      </v-col-stub>
+    </v-row-stub>
+    <v-row-stub tag=\\"div\\">
+      <v-divider-stub></v-divider-stub>
+    </v-row-stub>
+    <v-row-stub tag=\\"div\\">
+      <v-col-stub cols=\\"12\\" tag=\\"div\\" align=\\"right\\">
+        <v-container-stub tag=\\"div\\" fluid=\\"true\\" class=\\"pa-0 fill-height\\">
+          <v-row-stub tag=\\"div\\" nogutters=\\"true\\" align=\\"center\\" justify=\\"end\\">
+            <v-btn-stub color=\\"primary\\" rounded=\\"true\\" tag=\\"button\\" activeclass=\\"\\" depressed=\\"true\\" type=\\"button\\">
+              Check Page
+            </v-btn-stub>
+            <v-spacer-stub></v-spacer-stub>
+            <v-avatar-stub tile=\\"true\\" size=\\"48\\" class=\\"mr-1 my-2\\"><img id=\\"csharp-img\\" src=\\"/csharp_logo.svg\\" alt=\\"C# Logo\\"></v-avatar-stub>
+            <v-avatar-stub tile=\\"true\\" size=\\"48\\" class=\\"mr-1 my-2\\"><img id=\\"laravel-img\\" src=\\"/laravel-mark-rgb-red.svg\\" alt=\\"Laravel Logo\\"></v-avatar-stub>
+          </v-row-stub>
+        </v-container-stub>
+      </v-col-stub>
+    </v-row-stub>
+  </v-container-stub>
+</v-card-stub>"
+`;
