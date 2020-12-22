@@ -66,34 +66,22 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          color: 'orange',
-          title: 'Projetos',
-          to: '/'
-        },
-        {
           icon: 'mdi-face',
           color: 'blue',
           title: 'Sobre',
           to: '/about'
         },
         {
-          icon: 'mdi-layers-triple',
-          color: 'blue darken-2',
-          title: 'Experiência',
-          to: '/experience'
+          icon: 'mdi-apps',
+          color: 'orange',
+          title: 'Projetos',
+          to: '/'
         },
         {
           icon: 'mdi-file-certificate',
           color: 'blue darken-3',
           title: 'Habilidades',
           to: '/skills'
-        },
-        {
-          icon: 'mdi-school',
-          color: 'blue darken-4',
-          title: 'Educação',
-          to: '/education'
         },
         {
           icon: 'mdi-pdf-box',
@@ -122,9 +110,6 @@ export default {
     }
   },
   computed: {
-    lightsOn () {
-      return !this.$vuetify.theme.dark
-    }
   },
   methods: {
     changeToDarkMode (val) {

@@ -48,6 +48,14 @@ export default {
           description: 'Um pequeno app em C# usando windows forms que inicializa diretamente como um TrayIcon.',
           technologies: 'csharp,github',
           linkButton: 'https://github.com/ProgramadorDeValor/TrayIconExampleCsharp'
+        },
+        {
+          id: 4,
+          title: 'Molezinha',
+          description: 'Um pacote que implementa a Lógica do Porto (Software Architectural Pattern), sem modificar o core' +
+            ' do Laravel, podendo ser usado em concomitante com a estrutura original',
+          technologies: 'laravel,github',
+          linkButton: 'https://github.com/ProgramadorDeValor/molezinha-porto-laravel'
         }
       ]
     }
