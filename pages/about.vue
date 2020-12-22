@@ -1,7 +1,7 @@
 <template>
   <v-row>
     <v-card
-      class="mx-auto"
+      class="mx-2"
       color="primary"
       dark
     >
@@ -15,7 +15,7 @@
         <span class="title font-weight-light">Quem sou eu ?</span>
       </v-card-title>
 
-      <v-card-text class="headline font-weight-bold">
+      <v-card-text class="headline font-weight-bold white--text">
         {{ aboutMe }}
       </v-card-text>
 
@@ -39,10 +39,7 @@
         <div class="font-weight-bold ml-8 mb-2 title text-center">
           Experiências
         </div>
-        <v-timeline
-          align-top
-          :dense="$vuetify.breakpoint.smAndDown"
-        >
+        <v-timeline>
           <v-timeline-item
             v-for="(item, i) in experienceItems"
             :key="i"
@@ -50,6 +47,12 @@
             :icon="item.icon"
             fill-dot
           >
+            <template #opposite>
+              <span
+                :class="`headline font-weight-bold blue--text`"
+                v-text="item.year"
+              />
+            </template>
             <v-card
               :color="item.color"
               dark
@@ -57,33 +60,51 @@
               <v-card-title class="title">
                 {{ item.title }}
               </v-card-title>
-              <v-card-text class="white text--primary">
-                <p>{{ item.description }}</p>
-                <v-icon color="black">
-                  mdi-laravel
-                </v-icon>
-              </v-card-text>
-              <v-row class="mx-1 align-start">
-                <v-col
-                  v-for="(system, index) in item.systems"
-                  :key="index"
-                  cols="12"
-                  sm="6"
-                  xl="4"
+              <v-card-text v-if="item.description" class="pt-2">
+                <p
+                  v-for="(line,i) in item.description"
+                  :key="i"
+                  class="body-1 white--text"
                 >
-                  <system-knowledge
-                    :title="system.title"
-                    :level="system.level"
-                    :bar-value="system.bar"
-                    :description="system.description"
-                    :avatar-letter="system.avatarLetter"
-                    :avatar-color="system.avatarColor"
-                    :card-color="system.cardColor"
-                    :text-color="system.textColor"
-                    :description-title-color="system.descriptionTitleColor"
-                  />
-                </v-col>
-              </v-row>
+                  {{ line }}
+                </p>
+              </v-card-text>
+            </v-card>
+          </v-timeline-item>
+        </v-timeline>
+        <div class="font-weight-bold ml-8 mb-2 title text-center">
+          Educação
+        </div>
+        <v-timeline>
+          <v-timeline-item
+            v-for="(item, i) in educationItems"
+            :key="i"
+            :color="item.color"
+            :icon="item.icon"
+            fill-dot
+          >
+            <template #opposite>
+              <span
+                :class="`headline font-weight-bold blue--text`"
+                v-text="item.year"
+              />
+            </template>
+            <v-card
+              :color="item.color"
+              dark
+            >
+              <v-card-title class="title">
+                {{ item.title }}
+              </v-card-title>
+              <v-card-text v-if="item.description" class="pt-2">
+                <p
+                  v-for="(line,i) in item.description"
+                  :key="i"
+                  class="body-1 white--text"
+                >
+                  {{ line }}
+                </p>
+              </v-card-text>
             </v-card>
           </v-timeline-item>
         </v-timeline>
@@ -95,58 +116,65 @@
 
 </style>
 <script>
-import { SystemKnowledge } from '../components/SystemKnowledge'
 export default {
   name: 'About',
-  components: { SystemKnowledge },
   data () {
     return {
       aboutMe: '"Um desenvolvedor backend que adora discutir e desenvolver ideias e projetos novos. Meus pontos ' +
         'mais fortes estão em C# e Laravel e atualmente caminhando também no aprendizado de VueJS para aumentar minhas habilidades no frontend."',
       experienceItems: [
         {
-          title: 'Analista de Sistemas III - Amcor - 2018 - Presente',
+          title: 'Analista de Sistemas III - Amcor',
           icon: 'mdi-star',
+          year: '2018 - Presente',
           color: 'primary',
-          description: 'Atuando em um time glogbal de desenvolvimento ' +
-            'Workday - Integrações e Relatórios',
-          systems: [
-            {
-              title: 'C#',
-              level: 'Intermediário',
-              bar: 66,
-              avatarLetter: 'C'
-            },
-            {
-              title: 'Laravel',
-              avatarColor: 'orange darken-2',
-              level: 'Intermediário',
-              bar: 66,
-              avatarLetter: 'L',
-              cardColor: 'white',
-              textColor: 'black',
-              descriptionTitleColor: 'primary'
-            },
-            {
-              title: 'Workday',
-              level: 'Intermediário',
-              bar: 50,
-              description: 'Desenvolvimento de Relatórios, Integrações e BIRT',
-              avatarLetter: 'W'
-            }
+          description: [
+            'Atuando em um time glogbal de desenvolvimento. ',
+            '- Workday relatórios e Integrações',
+            '- Desenvolvimento e manutenção em C# e Vb.net para sistemas de Chão de Fábrica.']
+        },
+        {
+          title: 'Analista de Negócios - Bemis/Amcor',
+          year: '2016 - 2018',
+          icon: 'mdi-account',
+          color: 'primary',
+          description: [
+            '- Propor padrões, procedimentos e fornecer suporte técnico na identificação das alternativas e oportunidades de aplicações de Tecnologias de Informação para as áreas de RH.',
+            '- Avaliação das evoluções de versões dos sistemas de RH identificando os impactos no modelo já implantado e o custo benefício dessas atualizações.',
+            '- Participar das elaborações de "Business Case" de Projetos relacionados aos processos, gerando subsídios para decisões relativas à implementação.',
+            '- Avaliar continuamente os Projetos relacionados à área de RH, aferindo os benefícios esperados e calculando os referidos retornos do capital empregado (ROI).',
+            '- Participar de reuniões com fornecedores de soluções e áreas administrativas da empresa para prestar suporte e esclarecer o atendimento aos requerimentos definidos e o completo entendimento das necessidades de TI e negócio.',
+            '- Promover o relacionamento externo com fornecedores para o perfeito atendimento das necessidade e estratégias da companhia.',
+            '- Desenvolvimento de Correções e Melhorias para o Fatorhweb'
           ]
         },
         {
-          title: 'Analista de Negócios - Bemis/Amcor - 2016 - 2018',
+          title: 'Estagiário Analista de Negócios - Bemis',
+          year: '2014 - 2016',
           icon: 'mdi-account',
-          color: 'accent',
-          description: 'ashudauhdshuauhduhahud'
+          color: 'primary'
+        }
+      ],
+      educationItems: [
+        {
+          title: 'USP/ESALQ - MBA - Gestão de Negócios',
+          icon: 'mdi-briefcase',
+          year: '2019 - 2021',
+          color: 'primary'
         },
         {
-          title: 'Estagiário Analista de Negócios - Bemis - 2014 - 2016',
-          icon: 'mdi-account',
-          color: 'accent',
-          description: 'ashudauhdshuauhduhahud'
+          title: 'IFSP - Análise e Desenvolvimento de Sistemas',
+          year: '2013 - 2016',
+          icon: 'mdi-glasses',
+          color: 'green'
+        },
+        {
+          title: 'SENAI - Técnico em eletrônica',
+          year: '2011 - 2012',
+          icon: 'mdi-memory',
+          color: 'red',
+          description: [
+            'Ênfase em automação']
         }
       ]
     }

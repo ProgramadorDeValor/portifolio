@@ -15,7 +15,7 @@
           <v-list-item>
             <v-list-item-avatar :color="avatarColor">
               <slot name="avatar">
-                <span class="white--text headline">{{ avatarLetter }}</span>
+                <span class="white--text headline">{{ initialLetter }}</span>
               </slot>
             </v-list-item-avatar>
             <v-list-item-content>
@@ -54,7 +54,6 @@
         <v-expansion-panels accordion hover>
           <v-expansion-panel>
             <v-expansion-panel-header
-              :color="descriptionTitleColor"
               ripple
               expand-icon="mdi-plus"
             >
@@ -62,7 +61,7 @@
                 {{ descriptionTitle }}
               </div>
             </v-expansion-panel-header>
-            <v-expansion-panel-content color="primary" eager>
+            <v-expansion-panel-content eager>
               <div class="body-2 pt-2">
                 {{ description }}
               </div>
@@ -89,7 +88,7 @@ export default {
     },
     avatarLetter: {
       type: String,
-      default: 'E'
+      default: ''
     },
     title: {
       type: String,
@@ -105,7 +104,7 @@ export default {
     },
     descriptionTitleColor: {
       type: String,
-      default: 'blue'
+      default: 'white'
     },
     description: {
       type: String,
@@ -134,6 +133,9 @@ export default {
     }
   },
   computed: {
+    initialLetter () {
+      return this.avatarLetter !== '' ? this.avatarLetter : this.title.substr(0, 1)
+    },
     bar1Calc () {
       if (this.barValue < 1)
         return 0
