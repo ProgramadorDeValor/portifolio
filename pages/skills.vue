@@ -9,7 +9,7 @@
         sm="4"
         md="3"
       >
-        <system-knowledge
+        <SystemKnowledge
           :title="system.title"
           :level="system.level"
           :bar-value="system.bar"
@@ -29,11 +29,8 @@
 
 </style>
 <script>
-import { SystemKnowledge } from '../components/SystemKnowledge'
-
 export default {
   name: 'Skills',
-  components: ['SystemKnowledge'],
   data () {
     return {
       systems: [
