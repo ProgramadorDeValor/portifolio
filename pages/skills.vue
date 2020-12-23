@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title> Quadro de Habilidades</v-card-title>
     <v-row class="mx-1 align-start">
       <v-col
@@ -9,7 +9,7 @@
         sm="4"
         md="3"
       >
-        <system-knowledge
+        <SystemKnowledge
           :title="system.title"
           :level="system.level"
           :bar-value="system.bar"
@@ -29,11 +29,8 @@
 
 </style>
 <script>
-import { SystemKnowledge } from '../components/SystemKnowledge'
-
 export default {
   name: 'Skills',
-  components: ['SystemKnowledge'],
   data () {
     return {
       systems: [
@@ -97,6 +94,14 @@ export default {
           bar: 60,
           description: 'Desenvolvimento de Relatórios, Integrações via SQL, ' +
             'Desenvolvimento de Melhorias e customizações em Java, Suporte e Criação de Rúbricas/Eventos e Acordos Coletivos'
+        },
+        {
+          title: 'xMII - SAP',
+          level: 'Intermediário',
+          cardColor: 'blue darken-4',
+          avatarColor: 'black',
+          bar: 50,
+          description: 'Desenvolvimento e manutenção de Integrações entre SAP e Sistemas de Chão de Fábrica'
         }
       ]
     }

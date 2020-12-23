@@ -34,7 +34,11 @@
         </v-list-item>
       </v-card-actions>
     </v-card>
-    <v-card style="width: 100%" outlined>
+    <v-card
+      style="width: 100%"
+      outlined
+      class="mt-2 mx-2"
+    >
       <v-card-text>
         <div class="font-weight-bold ml-8 mb-2 title text-center">
           Experiências
@@ -62,8 +66,8 @@
               </v-card-title>
               <v-card-text v-if="item.description" class="pt-2">
                 <p
-                  v-for="(line,i) in item.description"
-                  :key="i"
+                  v-for="(line,j) in item.description"
+                  :key="j"
                   class="body-1 white--text"
                 >
                   {{ line }}
@@ -77,8 +81,8 @@
         </div>
         <v-timeline>
           <v-timeline-item
-            v-for="(item, i) in educationItems"
-            :key="i"
+            v-for="(item, index) in educationItems"
+            :key="index"
             :color="item.color"
             :icon="item.icon"
             fill-dot
@@ -98,8 +102,8 @@
               </v-card-title>
               <v-card-text v-if="item.description" class="pt-2">
                 <p
-                  v-for="(line,i) in item.description"
-                  :key="i"
+                  v-for="(line,j) in item.description"
+                  :key="j"
                   class="body-1 white--text"
                 >
                   {{ line }}
