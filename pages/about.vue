@@ -34,7 +34,11 @@
         </v-list-item>
       </v-card-actions>
     </v-card>
-    <v-card style="width: 100%" outlined>
+    <v-card
+      style="width: 100%"
+      outlined
+      class="mt-2 mx-2"
+    >
       <v-card-text>
         <div class="font-weight-bold ml-8 mb-2 title text-center">
           Experiências

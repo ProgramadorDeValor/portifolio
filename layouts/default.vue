@@ -86,20 +86,8 @@ export default {
         {
           icon: 'mdi-pdf-box',
           color: 'red darken-4',
-          title: 'Currículo',
+          title: 'Currículo / Contato',
           to: '/resume'
-        },
-        {
-          icon: 'mdi-notebook-edit',
-          color: 'blue darken-4',
-          title: 'Blog',
-          to: '/blog'
-        },
-        {
-          icon: 'mdi-chat-processing',
-          color: 'purple darken-4',
-          title: 'Contato',
-          to: '/contact'
         }
       ],
       miniVariant: false,
