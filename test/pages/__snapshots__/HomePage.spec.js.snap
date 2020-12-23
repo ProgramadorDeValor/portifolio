@@ -2,14 +2,26 @@
 
 exports[`index renders properly 1`] = `
 "<v-row-stub tag=\\"div\\" class=\\"justify-sm-center justify-md-start\\">
-  <v-col-stub cols=\\"12\\" sm=\\"8\\" md=\\"6\\" tag=\\"div\\">
-    <project-card-stub technologies=\\"vuejs,laravel,mariadb,gitlab\\" title=\\"Tamarindo Soluçôes\\" description=\\"Um sistema para dar maior inteligência e controle à restaurantes de pequeno em médio porte.\\" btntext=\\"Visitar\\" linkbutton=\\"https://tamarindosolucoes.com.br\\" imgsrc=\\"https://tamarindosolucoes.com.br/img/head/hand-holding-a-smartphone-mock-up_1022-1824.png\\"></project-card-stub>
-  </v-col-stub>
-  <v-col-stub cols=\\"12\\" sm=\\"8\\" md=\\"6\\" tag=\\"div\\">
-    <project-card-stub technologies=\\"vuejs,github\\" title=\\"Yotube Hunter\\" description=\\"Um Pequeno Site de Exercício que Busca Informação de Videos do Youtube\\" btntext=\\"Visitar\\" linkbutton=\\"https://github.com/ProgramadorDeValor/teste-front-end\\" imgsrc=\\"https://cdn.vuetifyjs.com/images/cards/server-room.jpg\\"></project-card-stub>
-  </v-col-stub>
-  <v-col-stub cols=\\"12\\" sm=\\"8\\" md=\\"6\\" tag=\\"div\\">
-    <project-card-stub technologies=\\"csharp,github\\" title=\\"TrayIcon App\\" description=\\"Um pequeno app em C# usando windows forms que inicializa diretamente como um TrayIcon.\\" btntext=\\"Visitar\\" linkbutton=\\"https://github.com/ProgramadorDeValor/TrayIconExampleCsharp\\" imgsrc=\\"https://cdn.vuetifyjs.com/images/cards/server-room.jpg\\"></project-card-stub>
+  <v-col-stub cols=\\"12\\" tag=\\"div\\">
+    <v-card-stub loaderheight=\\"4\\" tag=\\"div\\" outlined=\\"true\\">
+      <v-card-title-stub class=\\"title\\">
+        Projetos
+      </v-card-title-stub>
+      <v-row-stub tag=\\"div\\">
+        <v-col-stub cols=\\"12\\" md=\\"6\\" tag=\\"div\\">
+          <project-card-stub technologies=\\"vuejs,laravel,mariadb,gitlab\\" title=\\"Tamarindo Soluçôes\\" description=\\"Um sistema para dar maior inteligência e controle à restaurantes de pequeno em médio porte.\\" btntext=\\"Visitar\\" linkbutton=\\"https://tamarindosolucoes.com.br\\" imgsrc=\\"https://tamarindosolucoes.com.br/img/head/hand-holding-a-smartphone-mock-up_1022-1824.png\\" class=\\"mx-2\\"></project-card-stub>
+        </v-col-stub>
+        <v-col-stub cols=\\"12\\" md=\\"6\\" tag=\\"div\\">
+          <project-card-stub technologies=\\"vuejs,github\\" title=\\"Yotube Hunter\\" description=\\"Um Pequeno Site de Exercício que Busca Informação de Videos do Youtube\\" btntext=\\"Visitar\\" linkbutton=\\"https://github.com/ProgramadorDeValor/teste-front-end\\" imgsrc=\\"https://cdn.vuetifyjs.com/images/cards/server-room.jpg\\" class=\\"mx-2\\"></project-card-stub>
+        </v-col-stub>
+        <v-col-stub cols=\\"12\\" md=\\"6\\" tag=\\"div\\">
+          <project-card-stub technologies=\\"csharp,github\\" title=\\"TrayIcon App\\" description=\\"Um pequeno app em C# usando windows forms que inicializa diretamente como um TrayIcon.\\" btntext=\\"Visitar\\" linkbutton=\\"https://github.com/ProgramadorDeValor/TrayIconExampleCsharp\\" imgsrc=\\"https://cdn.vuetifyjs.com/images/cards/server-room.jpg\\" class=\\"mx-2\\"></project-card-stub>
+        </v-col-stub>
+        <v-col-stub cols=\\"12\\" md=\\"6\\" tag=\\"div\\">
+          <project-card-stub technologies=\\"laravel,github\\" title=\\"Molezinha\\" description=\\"Um pacote que implementa a Lógica do Porto (Software Architectural Pattern), sem modificar o core do Laravel, podendo ser usado em concomitante com a estrutura original\\" btntext=\\"Visitar\\" linkbutton=\\"https://github.com/ProgramadorDeValor/molezinha-porto-laravel\\" imgsrc=\\"https://cdn.vuetifyjs.com/images/cards/server-room.jpg\\" class=\\"mx-2\\"></project-card-stub>
+        </v-col-stub>
+      </v-row-stub>
+    </v-card-stub>
   </v-col-stub>
 </v-row-stub>"
 `;
