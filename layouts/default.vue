@@ -13,9 +13,9 @@
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
-          :to="item.to"
           router
           exact
+          @click="goToItem(item.to)"
         >
           <v-list-item-action>
             <v-icon :color="item.color">
@@ -69,25 +69,25 @@ export default {
           icon: 'mdi-face',
           color: 'blue',
           title: 'Sobre',
-          to: '/about'
+          to: '#about'
         },
         {
           icon: 'mdi-apps',
           color: 'orange',
           title: 'Projetos',
-          to: '/'
+          to: '#project'
         },
         {
           icon: 'mdi-file-certificate',
           color: 'blue darken-3',
           title: 'Habilidades',
-          to: '/skills'
+          to: '#skills'
         },
         {
           icon: 'mdi-pdf-box',
           color: 'red darken-4',
           title: 'Currículo / Contato',
-          to: '/resume'
+          to: '#resume'
         }
       ],
       miniVariant: false,
@@ -102,6 +102,9 @@ export default {
   methods: {
     changeToDarkMode (val) {
       this.$vuetify.theme.dark = !val
+    },
+    goToItem (val) {
+      this.$vuetify.goTo(val)
     }
   }
 }

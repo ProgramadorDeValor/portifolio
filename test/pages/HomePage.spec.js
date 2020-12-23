@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import index from '@/pages/index'
+import index from '~/pages/project'
 
 describe('index', () => {
   test('mounts properly', () => {

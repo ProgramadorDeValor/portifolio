@@ -37,7 +37,7 @@
       </v-card>
     </v-col>
     <v-col cols="12">
-      <v-card>
+      <v-card outlined>
         <v-card-title class="title">
           Contato
         </v-card-title>

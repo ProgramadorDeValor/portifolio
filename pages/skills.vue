@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card outlined>
     <v-card-title> Quadro de Habilidades</v-card-title>
     <v-row class="mx-1 align-start">
       <v-col
