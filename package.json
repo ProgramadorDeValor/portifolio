@@ -18,7 +18,7 @@
     "@nuxtjs/proxy": "^2.1.0",
     "core-js": "^3.8.1",
     "font-awesome": "^4.7.0",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.15.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
